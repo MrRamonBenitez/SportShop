@@ -5,8 +5,8 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-    private static Catalog sportCatalog = new ShopCatalog();
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final Catalog sportCatalog = new ShopCatalog();
     private static Orders orders = new ShopOrders();
     private static Cart completedCart = null;
     private static Clients shopClients = new ShopClients();
