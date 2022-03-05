@@ -14,12 +14,10 @@ public class ShopClient implements Client {
         this.address = address;
     }
 
-    @Override
     public void setPhoneNumber(String number) {
         phoneNumber = number;
     }
 
-    @Override
     public void setAddress(String address) {
         this.address = address;
     }

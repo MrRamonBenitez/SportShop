@@ -7,7 +7,7 @@ import java.util.*;
 import static java.lang.System.out;
 
 public class ShopCatalog implements Catalog {
-    private Map<Integer, Product> catalog;
+    private final Map<Integer, Product> catalog;
 
     public ShopCatalog() {
         this.catalog = new HashMap<>();
@@ -31,12 +31,10 @@ public class ShopCatalog implements Catalog {
         out.println();
     }
 
-    @Override
     public int getCatalogSize() {
         return catalog.size();
     }
 
-    @Override
     public Product getItem(int id) {
         if (catalog.containsKey(id)) {
             return catalog.get(id);
@@ -44,12 +42,10 @@ public class ShopCatalog implements Catalog {
         return null;
     }
 
-    @Override
     public boolean checkingItemExist(Product product) {
         return catalog.containsValue(product);
     }
 
-    @Override
     public void keywordFilter(String keyWord) {
         catalog.entrySet().stream()
                 .filter(item -> item.getValue().getName().contains(keyWord))
@@ -58,7 +54,6 @@ public class ShopCatalog implements Catalog {
                 .forEach(out::println);
     }
 
-    @Override
     public void priceFilter(int minPrice, int maxPrice) {
         catalog.entrySet().stream()
                 .filter(item -> item.getValue().getPrice() > minPrice &&
@@ -68,7 +63,6 @@ public class ShopCatalog implements Catalog {
                 .forEach(out::println);
     }
 
-    @Override
     public void brandFilter(String brand) {
         catalog.entrySet().stream()
                 .filter(item -> brand.equals(item
@@ -80,7 +74,6 @@ public class ShopCatalog implements Catalog {
                 .forEach(out::println);
     }
 
-    @Override
     public void purchaseRecommendationSystem(Product product) {
         product.setRating(product.getRating() + 1);
     }

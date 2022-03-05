@@ -24,6 +24,7 @@ public class ShopCartItem implements CartItem {
         return count;
     }
 
+    @Override
     public int getTotalPrice() {
         return totalPrice;
     }

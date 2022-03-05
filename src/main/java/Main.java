@@ -146,18 +146,19 @@ public class Main {
                 break;
             } else {
                 int productId = Integer.parseInt(input);
+
                 out.println("Введите количество товара:");
                 int productVolume = Integer.parseInt(scanner.nextLine());
 
                 CartItem item = new ShopCartItem(sportCatalog.getItem(productId), productVolume);
 
-                sportCatalog                                                                        // уменьшаем количество
-                        .getItem(productId)                                                         // товара данной номенклатуры
-                        .setQuantity(sportCatalog                                                   //в каталоге магазина на величину
-                        .getItem(productId).getQuantity() - productVolume);                         //количество товара, добавленного
-                                                                                                    //в корзину
-                sportCatalog.purchaseRecommendationSystem(sportCatalog.getItem(productId));
-
+                sportCatalog                                                                    // уменьшаем количество
+                    .getItem(productId)                                                         // товара данной номенклатуры
+                    .setQuantity(sportCatalog                                                   //в каталоге магазина на величину
+                                    .getItem(productId).getQuantity() - productVolume);         //количество товара, добавленного
+                                                                                                //в корзину;
+                sportCatalog.purchaseRecommendationSystem(sportCatalog.getItem(productId));     //при добавлении товара в корзину
+                                                                                                //повышаем его рейтинг;
                 newCart.addItem(item);
             }
         }
